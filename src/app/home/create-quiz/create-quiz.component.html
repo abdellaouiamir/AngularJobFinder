@@ -1,0 +1,86 @@
+<h1>Create Quiz</h1>
+<form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="quizName">Quiz Name</label>
+    <mat-form-field>
+      <input matInput type="text" id="quizName" formControlName="quizName">
+      <mat-error *ngIf="quizForm.get('quizName')?.invalid && (quizForm.get('quizName')?.dirty || quizForm.get('quizName')?.touched)">
+        Quiz name is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <label>Questions</label>
+    
+    <div formArrayName="questions">
+      <div *ngFor="let question of questions?.controls; let i=index" [formGroupName]="i" class="card">
+        <div class="card-header">
+          <h2>Question {{ i + 1 }}</h2>
+          <button type="button"mat-raised-button color="warn" (click)="removeQuestion(i)">Remove</button>
+        </div>
+        
+        <div class="card-body">
+          <div class="form-group">
+            
+            <mat-form-field>
+              <mat-label for="questionText">Question Text</mat-label>
+              <input matInput type="text" id="questionText" formControlName="questionText">
+              <mat-error *ngIf="question.get('questionText')?.invalid && (question.get('questionText')?.dirty || question.get('questionText')?.touched)" >
+                Question text is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label>Options</label>
+            <div class="answer">
+            <mat-form-field>
+              <mat-label>Answer 1</mat-label>
+              <input matInput type="text" formControlName="options">
+              <mat-error *ngIf="question.get('options')?.invalid && (question.get('options')?.dirty || question.get('options')?.touched)">
+                Answer text is required
+              </mat-error>
+            </mat-form-field>
+            <div class="check_field">
+              <mat-radio-group formControlName="result">
+                <mat-radio-button value=true>True</mat-radio-button>
+                <mat-radio-button value=false [checked]="true">False</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            </div>
+            <div class="answer">
+            <mat-form-field>
+              <mat-label>Answer 2</mat-label>
+              <input matInput type="text" formControlName="options2">
+              <mat-error *ngIf="question.get('options2')?.invalid && (question.get('options2')?.dirty || question.get('options2')?.touched)">
+                Answer text is required
+              </mat-error>
+            </mat-form-field>
+            <div class="check_field">
+              <mat-radio-group formControlName="result2">
+                <mat-radio-button value=true>True</mat-radio-button>
+                <mat-radio-button value=false [checked]="true">False</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            </div>
+            <div class="answer">
+            <mat-form-field>
+              <mat-label>Answer 3</mat-label>
+              <input matInput type="text" formControlName="options3">
+            </mat-form-field>
+            <div class="check_field">
+              <mat-radio-group formControlName="result3">
+                <mat-radio-button value=true>True</mat-radio-button>
+                <mat-radio-button value=false [checked]="true">False</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button type="button" mat-raised-button color="primary" (click)="addQuestion()">Add Question</button>
+  </div>
+  
+  <button type="submit" mat-raised-button color="primary">Create Quiz</button>
+</form>

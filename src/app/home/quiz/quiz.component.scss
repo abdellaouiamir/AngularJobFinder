@@ -1,0 +1,64 @@
+/* Center the quiz */
+.quiz-container {
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .question-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .question-box {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  
+  /* Style the title */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the question */
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the radio buttons and labels */
+  mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  mat-radio-button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  label {
+    margin-left: 5px;
+  }
+  
+  /* Style the submit button */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0062cc;
+  }

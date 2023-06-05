@@ -1,0 +1,78 @@
+.post-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .rectangle-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    background-color: #857fda;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .statistical {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .statistical p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .container > div {
+    margin: 10px;
+    flex: 0 0 auto;
+  }
+  
+  .graph-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .g {
+    width: 1000px!important;
+    height: 600px!important;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .border {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .general {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .general > div {
+    margin: 10px;
+    flex: 0 0 auto;
+  }
+  

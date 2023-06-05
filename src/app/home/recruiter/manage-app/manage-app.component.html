@@ -1,0 +1,182 @@
+<div class="container">
+    <div class="scrolable" *ngIf="show">
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Candidate Name Column -->
+        <ng-container matColumnDef="candidateName">
+          <mat-header-cell *matHeaderCellDef class="column-candidateName">Name </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-candidateName"> {{row.full_name}} </mat-cell>
+        </ng-container>
+      
+        <!-- Position Applied Column -->
+        <ng-container matColumnDef="positionApplied">
+          <mat-header-cell *matHeaderCellDef class="column-positionApplied"> Position Applied </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-positionApplied"> {{row.title}} </mat-cell>
+        </ng-container>
+      
+        <!-- Application Date Column -->
+        <ng-container matColumnDef="applicationDate">
+          <mat-header-cell *matHeaderCellDef class="column-applicationDate"> Application Date </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-applicationDate"> {{row.application_date|date}} </mat-cell>
+        </ng-container>
+      
+        <!-- Application Status Column -->
+        <ng-container matColumnDef="applicationStatus">
+          <mat-header-cell *matHeaderCellDef class="column-applicationStatus"> Application Status </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-applicationStatus"> {{row.status}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Score">
+          <mat-header-cell *matHeaderCellDef class="column-Score"> Score </mat-header-cell>
+          <mat-cell *matCellDef="let row" [ngClass]="getScoreColor(row.score)" class="column-Score"> {{row.score}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Quiz">
+          <mat-header-cell *matHeaderCellDef class="column-Quiz"> Quiz </mat-header-cell>
+          <mat-cell *matCellDef="let row" [ngClass]="getScoreColor(row.quiz_score)" class="column-Quiz"> {{row.quiz_score}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="CV">
+          <mat-header-cell *matHeaderCellDef class="column-CV"> CV </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-CV">
+            <button mat-icon-button color="primary" (click)="getCV(row.cv_id)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+        <!-- Contact Info Column -->
+        <ng-container matColumnDef="contactInfo">
+          <mat-header-cell *matHeaderCellDef class="column-contactInfo"> Contact Info </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-contactInfo"> {{row.email}} </mat-cell>
+        </ng-container>
+      
+        <!-- View Candidate Profile Column -->
+        <ng-container matColumnDef="viewProfile">
+          <mat-header-cell *matHeaderCellDef class="column-viewProfile"> View Profile </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-viewProfile">
+            <button mat-icon-button color="primary" routerLink="/profile" [queryParams]="{ email: row.email }">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="coverLetter">
+          <mat-header-cell *matHeaderCellDef class="column-coverLetter"> Cover letter </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-coverLetter">
+            <button mat-icon-button color="primary" (click)="getCoverLetter(row.cover_letter)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="approve">
+          <mat-header-cell *matHeaderCellDef class="column-approve"> Approved </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-approve">
+            <button mat-icon-button color="primary" (click)="approve(row.id)">
+              <mat-icon>check_circle</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="reject">
+          <mat-header-cell *matHeaderCellDef class="column-reject"> Reject </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="column-reject">
+            <button mat-icon-button color="warn" (click)="reject(row.id)">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      
+      </mat-table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="scrolable" *ngIf="!show">
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <!-- Candidate Name Column -->
+          <ng-container matColumnDef="candidateName">
+            <mat-header-cell *matHeaderCellDef>Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.full_name}} </mat-cell>
+          </ng-container>
+        
+          <!-- Position Applied Column -->
+          <ng-container matColumnDef="positionApplied">
+            <mat-header-cell *matHeaderCellDef> Position Applied </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+          </ng-container>
+        
+          <!-- Application Date Column -->
+          <ng-container matColumnDef="applicationDate">
+            <mat-header-cell *matHeaderCellDef> Application Date </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.application_date|date}} </mat-cell>
+          </ng-container>
+        
+          <!-- Application Status Column -->
+          <ng-container matColumnDef="applicationStatus">
+            <mat-header-cell *matHeaderCellDef> Application Status </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+          </ng-container>
+
+          <!-- Contact Info Column -->
+          <ng-container matColumnDef="contactInfo">
+            <mat-header-cell *matHeaderCellDef class="column-contactInfo"> Contact Info </mat-header-cell>
+            <mat-cell *matCellDef="let row" class="column-contactInfo"> {{row.email}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Score">
+            <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+            <mat-cell *matCellDef="let row" [ngClass]="getScoreColor(row.score)"> {{row.score}} </mat-cell>
+          </ng-container>
+
+
+          <ng-container matColumnDef="coverLetter">
+            <mat-header-cell *matHeaderCellDef> Cover letter </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" (click)="getCoverLetter(row.cover_letter)">
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="Quiz">
+            <mat-header-cell *matHeaderCellDef> Quiz </mat-header-cell>
+            <mat-cell *matCellDef="let row" [ngClass]="getScoreColor(row.quiz_score)"> {{row.quiz_score}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="CV">
+            <mat-header-cell *matHeaderCellDef> CV </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" (click)="getCV(row.cv_id)">
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+
+          <!-- View Candidate Profile Column -->
+          <ng-container matColumnDef="cancel">
+            <mat-header-cell *matHeaderCellDef> cancel </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" *ngIf="row.status === 'applied'" (click)="abandon_job(row.id)">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+        
+          <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
+        
+        </mat-table>
+  </div>
+</div>
+

@@ -1,0 +1,67 @@
+.container {
+    height: 100%; /* set the height of the container */
+    overflow-y: auto; /* enable vertical scrolling */
+    margin-bottom: 20px; /* add some spacing between containers */
+}
+
+.scrollable {
+    height: 100%; /* set the height of the scrollable content to fill the container */
+}
+table {
+    width: 100%;
+}
+
+
+
+  .red-text {
+    color: #f4150d;
+  }
+  
+  .yellow-text {
+    color: #cd6917;
+  }
+  
+  .green-text {
+    color: #70d8bd;
+  }
+
+
+
+  .column-contactInfo {
+    flex: 0 0 20%;
+  }
+  .column-coveLetter{
+    flex: 0 0 7%;
+  }
+  .column-viewProfile{
+    flex: 0 0 7%;
+  }
+  .column-CV{
+    flex: 0 0 7%;
+  }
+  .column-Quiz{
+    flex: 0 0 7%;
+  }
+  .column-Score{
+    flex: 0 0 7%;
+  }
+  .column-applicationStatus{
+    flex: 0 0 7%;
+  }
+  .column-applicationDate{
+    flex: 0 0 7%;
+  }
+  .column-positionApplied{
+    flex: 0 0 7%;
+  }
+  .column-candidateName{
+    flex: 0 0 7%;
+  }
+
+  .column-approve{
+    flex: 0 0 7%;
+  }
+
+  .column-reject{
+    flex: 0 0 7%;
+  }

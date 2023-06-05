@@ -1,0 +1,68 @@
+form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  mat-form-field{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .answer {
+    margin-bottom: 10px;
+  }
+  
+  .check_field {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .check_field mat-radio-group {
+    margin-right: 10px;
+  }
+  .check_field mat-radio-button {
+    margin-right: 10px;
+  }
+  
+  button[type="submit"],
+  button[type="button"] {
+    margin-right: 10px;
+  }

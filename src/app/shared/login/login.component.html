@@ -1,0 +1,41 @@
+<body>
+    <mat-card>
+        <mat-card-title>Sign in</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your email</mat-label>
+                    <input type="email" matInput placeholder="ex@example.com" formControlName="email" required>
+                    <mat-icon matSuffix>mail_outline</mat-icon>
+                    <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="loginForm.get('email').hasError('wrongPassword')">
+                        Your Email or password is incorrect. Please try again.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password': 'text'" formControlName="password" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.arial-label]="'Hide Password'" [attr.aira-pressed]="hide">
+                        <mat-icon>{{ hide ? 'visibility_off': 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="loginForm.get('password').hasError('required')">Password is <strong>required</strong></mat-error>
+                    <mat-error *ngIf="loginForm.get('password').hasError('wrongPassword')">
+                        Your Email or password is incorrect. Please try again.
+                    </mat-error>
+                </mat-form-field>
+                <mat-card-actions align="end">
+                    <button type="submit" mat-raised-button color="primary" [style.width.px]="100" [disabled]="!loginForm.valid">Login</button>
+                    <a class="alink" routerLink="/resetPassword">Forgotten password?</a>
+                </mat-card-actions>
+                <mat-card-footer>
+                    <a class="alink" routerLink="/register">Create new profile</a>
+                </mat-card-footer>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</body>

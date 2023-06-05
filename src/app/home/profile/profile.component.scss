@@ -1,0 +1,147 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  flex-direction: row;
+  gap: 50px; /* Add gap between the two form fields */
+  padding: 30px; /* Add padding around the container */
+  background-color: #f7f7f7;
+}
+  
+  
+  .btn_img{
+    background-color: #0479df;
+    color: #ffffff;
+    margin-top: 110px;
+    height: 60px;
+    width: 400px;
+    font-size: 16px;
+  }
+
+  .custom-file-upload {
+    cursor: pointer;
+  }
+  
+  // .custom-file-upload div {
+  //   width: 100%;
+  //   height: 100%;
+  // }
+  
+  .custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .profile-avatar {
+    margin-top: 30px;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-right: 16px;
+    background-position: center;
+  }
+
+  .profile-card_1 {
+    background-color: #ffffff;
+    align-items: center;
+    grid-column: span 8;
+    grid-row: span 3;
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    border: black;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .prfile_button{
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-card_2 {
+    width: 900px;
+  }
+
+.profile-card_2 > mat-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+
+mat-label {
+  font-weight: bold;
+}
+
+
+.input_1 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; 
+  padding: 8px; 
+}
+.input_1 > mat-form-field {
+  width: 100%;
+}
+
+.input_2 {
+  padding: 8px;
+}
+
+.input_2 > mat-form-field {
+  width: 100%;
+}
+
+
+
+
+.password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  flex-direction: row;
+  gap: 50px; /* Add gap between the two form fields */
+  padding: 30px; /* Add padding around the container */
+  background-color: #f7f7f7;
+}
+
+.profile-reset_password {
+  position: relative;
+  background-color: #ffffff;
+  justify-content: center;
+  grid-column: span 8;
+  grid-row: span 3;
+  height: 300px;
+  width: 400px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  border: black;
+  margin-bottom: 60px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input_3 {
+  width: 350px;
+  padding-left: 23px;
+}
+.input_3 > mat-form-field {
+  width: 100%;
+}
+.reset_button{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+}
+h2{
+  text-align: left;
+  padding-left: 23px;
+  padding-bottom: 25px;
+}

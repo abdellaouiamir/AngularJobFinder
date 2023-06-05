@@ -1,0 +1,22 @@
+mat-card{
+    position: relative;
+    margin: 2em auto;
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    padding: 35px 40px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+.header-image {
+    --background-image : url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-image: var(--background-image);
+    background-size: cover;
+}
+
+.container{
+  padding: 10px;
+  background: #f7f7f7ff;
+}

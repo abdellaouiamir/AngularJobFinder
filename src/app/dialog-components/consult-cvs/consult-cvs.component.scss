@@ -1,0 +1,18 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-header-cell{
+    color:black;
+    font-size: 16px; 
+  }
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+  
+  .mat-row:hover {
+    border-color: currentColor;
+    cursor: pointer;
+  }
+  

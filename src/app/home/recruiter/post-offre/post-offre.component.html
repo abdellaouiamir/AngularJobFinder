@@ -1,0 +1,41 @@
+
+<div class="form">
+    <form [formGroup]="post_job" class="job-form" (ngSubmit)="onSubmit()">
+        <mat-form-field class="field">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" required>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <mat-label>Company</mat-label>
+          <input matInput formControlName="company" required>
+        </mat-form-field>
+      
+        <br>
+        <angular-editor id="1" formControlName="description" length="100" placeholder="Description..." [config]="editorConfig"></angular-editor>
+        <br>
+        <angular-editor id="2" formControlName="assignments" placeholder="Assignments..." [config]="editorConfig"></angular-editor>
+        <br>
+        <angular-editor id="3" formControlName="job_requirements" placeholder="Job requirements..." [config]="editorConfig"></angular-editor>
+        <br>
+      
+        <mat-form-field class="field">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" required>
+        </mat-form-field>
+      
+        <mat-form-field class="field">
+          <mat-label>Salary</mat-label>
+          <input matInput formControlName="salary" type="number" required>
+        </mat-form-field>
+      
+        <mat-form-field class="field">
+          <mat-label>Expiration Date</mat-label>
+          <input matInput formControlName="expire_at" type="date">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" *ngIf="!showUpdateButton">Post</button>
+        <button type="submit" mat-raised-button color="primary" *ngIf="showUpdateButton">update</button>
+      </form>
+  </div>
+
+  <!-- <angular-editor id="2" [config]="editorConfig"></angular-editor> -->

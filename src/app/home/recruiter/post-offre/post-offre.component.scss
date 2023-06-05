@@ -1,0 +1,29 @@
+
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+} 
+
+.job-form {
+  align-items: center;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  max-height: 1040px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.field {
+  width: 100%;
+  margin: 10px;
+}
+
+
+

@@ -1,0 +1,38 @@
+<div class="quiz-container">
+    <h2>{{ quizName }}:</h2>
+    <div class="question-container" *ngFor="let question of questions;let i = index">
+      <div class="question-box">
+        <h3>{{ question.questionText }}</h3>
+        <div>
+          <mat-radio-group [(ngModel)]="results[i].result">
+            {{ question.options }}
+            <mat-radio-button  [value]="'true'">
+              true
+            </mat-radio-button>
+            <mat-radio-button  [value]="'false'" [checked]="true">
+              false
+            </mat-radio-button>
+          </mat-radio-group>
+          <mat-radio-group [(ngModel)]="results[i].result2">
+            {{ question.options2 }}
+            <mat-radio-button   [value]="'true'">
+              true
+            </mat-radio-button>
+            <mat-radio-button   [value]="'false'" [checked]="true">
+              false
+            </mat-radio-button>
+          </mat-radio-group>
+          <mat-radio-group [(ngModel)]="results[i].result3">
+            {{ question.options3 }}
+            <mat-radio-button  value="true">
+              true
+            </mat-radio-button>
+            <mat-radio-button  value="false" [checked]="true">
+              false
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+    <button (click)="submit()">Submit</button>
+  </div>

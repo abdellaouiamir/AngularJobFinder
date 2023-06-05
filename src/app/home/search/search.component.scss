@@ -1,0 +1,131 @@
+
+.container {
+    height: 80%; /* set the height of the container */
+    overflow-y: auto; /* enable vertical scrolling */
+    margin-bottom: 20px; /* add some spacing between containers */
+  }
+  
+  .scrollable {
+    height: 100%; /* set the height of the scrollable content to fill the container */
+  }
+  
+  mat-card{
+    position: relative;
+    margin: 2em auto;
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    padding: 35px 40px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .header-image {
+    background-size: cover;
+  }
+  
+  
+  
+  .search-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    // border-radius: 24px;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .search {
+    width: 800px;
+  }
+  .search-field .mat-form-field-infix {
+    padding-left: 0;
+  }
+  
+  .search-button {
+    background-color: #fff;
+    border: none;
+  }
+  
+  .line {
+    border-bottom: 1px solid black;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .delete-button {
+    position: absolute;
+    right: 0;
+  }
+
+  .update-button {
+    background-color: rgb(34, 189, 34);
+    color: white;
+  }
+
+  .custom {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: royalblue;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  
+  .custom span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 95%;
+    height: 85%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid royalblue;
+  }
+  
+  .custom span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+  }
+  
+  .custom:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: royalblue;
+  }
+  
+  .custom:hover {
+    color: white;
+  }
+  
+  .custom:active span::before {
+    background: #2751cd;
+  }
+
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }

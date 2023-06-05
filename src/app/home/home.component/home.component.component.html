@@ -1,0 +1,42 @@
+<body>
+    <mat-toolbar class="nav">
+      <span class="logo">My App</span>
+      <ul>
+        <li><a routerLink="">Search</a></li>
+        <li><a routerLink="post_offre" *ngIf="userRole === 'Recruiter'">Post a job offer</a></li>
+      </ul>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="round-icon">
+        <mat-icon>person_outline</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/offre" [queryParams]="{ from: 'recruiter' }">
+          <span>Offre</span>
+        </button>
+        <button mat-menu-item routerLink="manage_app">
+          <span>Application</span>
+        </button>
+        <button mat-menu-item routerLink="profile">
+          <span>My Profile</span>
+        </button>
+        <button mat-menu-item routerLink="statistical">
+          <span>Stats</span>
+        </button>
+        <div *ngIf="islogged">
+          <button mat-menu-item (click)="openDialog()">
+            <span>Manage CVs</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>log out</span>
+          </button>
+        </div>
+        <div *ngIf="!islogged">
+          <button mat-menu-item routerLink="/login">
+            <mat-icon>login</mat-icon>
+            <span>Login</span>
+          </button>
+        </div>
+      </mat-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</body>
